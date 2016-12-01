@@ -50,7 +50,7 @@ public class HTTPClientFactory {
             schemeRegistry.register(new Scheme(SCHEME_NAME_HTTP, SCHEME_PORT_HTTP,
                                                PlainSocketFactory.getSocketFactory()));
 
-            SSLSocketFactory ssf = new SSLSocketFactory(SSLContexCreator.createSSLContext(),
+            SSLSocketFactory ssf = new SSLSocketFactory(SSLContexCreator.createTrustAllSSLContext(),
                                                         SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
             schemeRegistry.register(new Scheme(SCHEME_NAME_HTTPS, SCHEME_PORT_HTTPS, ssf));
 
@@ -67,7 +67,7 @@ public class HTTPClientFactory {
         SchemeRegistry schemeRegistry = new SchemeRegistry();
         schemeRegistry.register(new Scheme(SCHEME_NAME_HTTP, SCHEME_PORT_HTTP, PlainSocketFactory.getSocketFactory()));
 
-        SSLSocketFactory ssf = new SSLSocketFactory(SSLContexCreator.createMySSLContext(),
+        SSLSocketFactory ssf = new SSLSocketFactory(SSLContexCreator.createTrustServerSSLContext(),
                                                     SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
         schemeRegistry.register(new Scheme(SCHEME_NAME_HTTPS, SCHEME_PORT_HTTPS, ssf));
 

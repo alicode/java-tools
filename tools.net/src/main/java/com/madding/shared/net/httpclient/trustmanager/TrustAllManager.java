@@ -15,13 +15,12 @@ import javax.net.ssl.X509TrustManager;
  * 
  * @author madding.lip May 12, 2014 1:45:24 PM
  */
-public class CustomTrustManager implements X509TrustManager {
+public class TrustAllManager implements X509TrustManager {
 
     public void checkClientTrusted(X509Certificate[] xcs, String string) throws CertificateException {
     }
 
     public void checkServerTrusted(X509Certificate[] xcs, String string) throws CertificateException {
-//        throw new CertificateException("false");
     }
 
     public X509Certificate[] getAcceptedIssuers() {
