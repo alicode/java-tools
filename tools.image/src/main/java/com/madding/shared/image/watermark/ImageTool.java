@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.image.watermark;
 
 import java.awt.AlphaComposite;
@@ -29,8 +34,8 @@ public class ImageTool {
     private final static int UP_RIGHT_TO_DOWN_LEFT = 6;
 
     // 实现加水印方法
-    public static BufferedImage watermark(String filepath, Font font, Color color, int toward, String mark,
-                                          float alpha, float scale) {
+    public static BufferedImage watermark(String filepath, Font font, Color color, int toward, String mark, float alpha,
+                                          float scale) {
         return watermark(new File(filepath), font, color, toward, mark, alpha, scale);
     }
 
@@ -131,17 +136,17 @@ public class ImageTool {
      * @return RenderingHints的一个对象
      */
     private static RenderingHints getMyRenderingHints() {
-        RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING,// 抗锯齿提示键。
+        RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, // 抗锯齿提示键。
                                                RenderingHints.VALUE_ANTIALIAS_ON);// 抗锯齿提示值——使用抗锯齿模式完成呈现。
-        rh.put(RenderingHints.KEY_TEXT_ANTIALIASING,// 文本抗锯齿提示键。
+        rh.put(RenderingHints.KEY_TEXT_ANTIALIASING, // 文本抗锯齿提示键。
                RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VRGB);// 要求针对 LCD 显示器优化文本显示
-        rh.put(RenderingHints.KEY_ALPHA_INTERPOLATION,// Alpha 插值提示值
+        rh.put(RenderingHints.KEY_ALPHA_INTERPOLATION, // Alpha 插值提示值
                RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);// Alpha 插值提示值——选择偏重于精确度和视觉质量的 alpha 混合算法
-        rh.put(RenderingHints.KEY_RENDERING,// 呈现提示键。
+        rh.put(RenderingHints.KEY_RENDERING, // 呈现提示键。
                RenderingHints.VALUE_RENDER_QUALITY);// 呈现提示值——选择偏重输出质量的呈现算法
-        rh.put(RenderingHints.KEY_STROKE_CONTROL,// 笔划规范化控制提示键。
+        rh.put(RenderingHints.KEY_STROKE_CONTROL, // 笔划规范化控制提示键。
                RenderingHints.VALUE_STROKE_NORMALIZE);// 几何形状应当规范化，以提高均匀性或直线间隔和整体美观。
-        rh.put(RenderingHints.KEY_COLOR_RENDERING,// 颜色呈现提示键。
+        rh.put(RenderingHints.KEY_COLOR_RENDERING, // 颜色呈现提示键。
                RenderingHints.VALUE_COLOR_RENDER_QUALITY);// 用最高的精确度和视觉质量执行颜色转换计算。
         return rh;
     }

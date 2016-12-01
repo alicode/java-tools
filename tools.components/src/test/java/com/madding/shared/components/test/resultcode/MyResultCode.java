@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.test.resultcode;
 
 import java.util.Locale;
@@ -12,7 +17,7 @@ import com.madding.shared.components.resultcode.ResultCodeComp;
  * @author madding.lip Sep 17, 2013 5:25:32 PM
  */
 enum MyResultCode implements IRichResultCode {
-    AAA(0), BBB(1), CCC(2), DDD(3);
+                                              AAA(0), BBB(1), CCC(2), DDD(3);
 
     private int                  code;
 

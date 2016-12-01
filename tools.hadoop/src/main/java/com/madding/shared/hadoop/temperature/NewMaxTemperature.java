@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.hadoop.temperature;
 
 import java.io.IOException;
@@ -49,7 +54,7 @@ public class NewMaxTemperature {
     static class NewMaxTemperatureReducer extends Reducer<Text, DoubleWritable, Text, DoubleWritable> {
 
         public void reduce(Text key, Iterable<DoubleWritable> values, Context context) throws IOException,
-                                                                                      InterruptedException {
+                                                                                       InterruptedException {
             double maxValue = Double.MIN_VALUE;
             for (DoubleWritable value : values) {
                 maxValue = Math.max(maxValue, value.get());

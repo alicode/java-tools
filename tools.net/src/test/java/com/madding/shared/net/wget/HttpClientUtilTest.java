@@ -1,8 +1,9 @@
-package com.madding.shared.net.wget;
-
 /*
- * Copyright madding.me.
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
+package com.madding.shared.net.wget;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -78,4 +79,3 @@ public class HttpClientUtilTest extends TestCase {
 // 110 禁止频繁单条发送
 // 111 系统暂定发送
 // 120 系统升级
-

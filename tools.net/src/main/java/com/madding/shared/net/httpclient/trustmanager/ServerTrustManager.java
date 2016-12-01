@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.net.httpclient.trustmanager;
 
 import java.io.File;
@@ -11,6 +16,9 @@ import java.security.cert.X509Certificate;
 
 import javax.net.ssl.X509TrustManager;
 
+/**
+ * @author madding.lip
+ */
 public class ServerTrustManager implements X509TrustManager {
 	Certificate cert = null;
 

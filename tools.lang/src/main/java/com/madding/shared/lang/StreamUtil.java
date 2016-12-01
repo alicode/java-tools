@@ -1,5 +1,7 @@
 /*
- * Copyright madding.me.
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
 package com.madding.shared.lang;
 
@@ -19,7 +21,7 @@ import java.net.Socket;
 import com.madding.shared.charset.Charset;
 
 /**
- * 类StreamUtil.java的实现描述： 基于流的工具类. 部分方法移植自IBM developer works精彩文章, 参见package文档.
+ * 类StreamUtil.java的实现描述： 基于流的工具类. 部分方法移植自IBM developer works精彩文章, 参见文档.
  * 
  * @author madding.lip May 7, 2012 4:08:44 PM
  */

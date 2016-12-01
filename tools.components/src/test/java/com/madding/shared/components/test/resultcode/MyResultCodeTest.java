@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.test.resultcode;
 
 import java.util.Locale;
@@ -14,7 +19,7 @@ import com.madding.shared.lang.LocaleUtil;
  * @author madding.lip
  */
 public class MyResultCodeTest {
-    
+
     @Test
     @Ignore
     public void test() {
@@ -23,7 +28,7 @@ public class MyResultCodeTest {
         System.out.println(code.getClass().isEnum());
         System.out.println(code.getName());
     }
-    
+
     @Test
     @Ignore
     public void test1() {
@@ -32,24 +37,23 @@ public class MyResultCodeTest {
         System.out.println(locale.getLanguage());
         System.out.println(locale.getCountry());
     }
-    
+
     @Test
-//    @Ignore
+    // @Ignore
     public void test2() {
         System.out.println(MyResultCode.AAA.getName());
         System.out.println(MyResultCode.AAA.getMessage());
-//        System.out.println(MyResultCode.BBB.getMessage());
-//        System.out.println(MyResultCode.CCC.getMessage());
-//        System.out.println(MyResultCode.DDD.getMessage());
+        // System.out.println(MyResultCode.BBB.getMessage());
+        // System.out.println(MyResultCode.CCC.getMessage());
+        // System.out.println(MyResultCode.DDD.getMessage());
     }
-    
+
     @Test
     @Ignore
     public void test3() {
-        IResultCode[]  elements = MyResultCode.AAA.getClass().getEnumConstants();
-        for ( IResultCode element : elements ) {
-           System.out.println(element.getName());
+        IResultCode[] elements = MyResultCode.AAA.getClass().getEnumConstants();
+        for (IResultCode element : elements) {
+            System.out.println(element.getName());
         }
     }
 }
-

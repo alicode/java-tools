@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.lang.classloader;
 
 import java.io.File;
@@ -24,6 +29,7 @@ public class MetaClassLoader extends ClassLoader {
             int num = f.available();
             classData = new byte[num];
             f.read(classData);
+            f.close();
         } catch (IOException e) {
             System.out.println(e);
         }

@@ -1,13 +1,13 @@
+/**
+ *
+ * Software Architecture Design Patterns in Java
+ * by Partha Kuchana 
+ * 
+ * Auerbach Publications
+ */
 package com.madding.shared.design.pattern.structural.bridge;
 
-/*
 
- Software Architecture Design Patterns in Java
- by Partha Kuchana 
-
- Auerbach Publications
-
- */
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;

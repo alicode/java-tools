@@ -1,12 +1,13 @@
 /*
- * Programmer-tools -- A develop code for dever to quickly analyse Copyright (C) 2013-2016 madding.lip
- * <madding.lip@gmail.com>. This library is free software; you can redistribute it and/or modify it under the terms of
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
  * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
 package com.madding.shared.misc;
 
-import sun.misc.Unsafe;
 import java.lang.reflect.Field;
+
+import sun.misc.Unsafe;
 
 /**
  * UnsafeUtil.java desc：TODO
@@ -14,24 +15,19 @@ import java.lang.reflect.Field;
  * @author madding.lip Aug 4, 2014 11:43:27 AM
  */
 public class UnsafeUtil {
-    
+
     private static final String THE_UNSAFE = "theUnsafe";
 
-    public static Unsafe getUnsafeInstance() throws Exception {
-        Field theUnsafeInstance;
+    public static Unsafe getUnsafeInstance() {
         try {
-            theUnsafeInstance = Unsafe.class.getDeclaredField(THE_UNSAFE);
-            theUnsafeInstance.setAccessible(true);
-            return (Unsafe) theUnsafeInstance.get(Unsafe.class);
-        } catch (SecurityException e) {
-            throw e;
-        } catch (NoSuchFieldException e) {
-            throw e;
-        } catch (IllegalArgumentException e) {
-            throw e;
-        } catch (IllegalAccessException e) {
-            throw e;
+            Field UnsafeFiled = Unsafe.class.getDeclaredField(THE_UNSAFE);
+            UnsafeFiled.setAccessible(true);
+            return (Unsafe) UnsafeFiled.get(Unsafe.class);
+        } catch (SecurityException | NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException | IllegalAccessException e) {
+            e.printStackTrace();
         }
-
+        return null;
     }
 }

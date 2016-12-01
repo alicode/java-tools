@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.task;
 
 import java.io.File;
@@ -13,9 +18,9 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractTaskV2 extends AbstractTask {
 
-    protected static final Logger  logger       = LoggerFactory.getLogger(AbstractTaskV2.class);
+    protected static final Logger  logger  = LoggerFactory.getLogger(AbstractTaskV2.class);
 
-    protected static final PCModel pcModel      = new PCModel();
+    protected static final PCModel pcModel = new PCModel();
 
     public AbstractTaskV2(File basedir, String logfileName){
         super(basedir, logfileName);
@@ -44,7 +49,7 @@ public abstract class AbstractTaskV2 extends AbstractTask {
             }
             return null;
         }
-        
+
         public boolean isEmpty() {
             return lbqueue.isEmpty();
         }

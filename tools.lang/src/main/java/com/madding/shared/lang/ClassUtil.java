@@ -1,5 +1,7 @@
 /*
- * Copyright madding.me.
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
 package com.madding.shared.lang;
 
@@ -22,19 +24,19 @@ import java.util.WeakHashMap;
 public class ClassUtil {
 
     /** 资源文件的分隔符： <code>'/'</code>。 */
-    public static final char            RESOURCE_SEPARATOR_CHAR    = '/';
+    public static final char               RESOURCE_SEPARATOR_CHAR    = '/';
 
     /** Java类名的分隔符： <code>'.'</code>。 */
-    public static final char            PACKAGE_SEPARATOR_CHAR     = '.';
+    public static final char               PACKAGE_SEPARATOR_CHAR     = '.';
 
     /** 内联类的分隔符： <code>'$'</code>。 */
-    public static final char            INNER_CLASS_SEPARATOR_CHAR = '$';
-    
+    public static final char               INNER_CLASS_SEPARATOR_CHAR = '$';
+
     /** Java类名的分隔符： <code>"."</code>。 */
-    public static final String          PACKAGE_SEPARATOR          = String.valueOf(PACKAGE_SEPARATOR_CHAR);
+    public static final String             PACKAGE_SEPARATOR          = String.valueOf(PACKAGE_SEPARATOR_CHAR);
 
     /** 内联类的分隔符： <code>"$"</code>。 */
-    public static final String          INNER_CLASS_SEPARATOR      = String.valueOf(INNER_CLASS_SEPARATOR_CHAR);
+    public static final String             INNER_CLASS_SEPARATOR      = String.valueOf(INNER_CLASS_SEPARATOR_CHAR);
 
     /** 所有类的信息表，包括父类, 接口, 数组的维数等信息。 */
     private static Map<Class<?>, TypeInfo> TYPE_MAP                   = Collections.synchronizedMap(new WeakHashMap<Class<?>, TypeInfo>());
@@ -49,7 +51,6 @@ public class ClassUtil {
      * 
      *  Integer[][].class.getName() = "[[Ljava.lang.Integer;" ClassUtil.getClassName(Integer[][].class) = "java.lang.Integer[][]"
      * </pre>
-     * 
      * </p>
      * <p>
      * 对于非数组的类型，该方法等效于 <code>Class.getName()</code> 方法。
@@ -79,7 +80,6 @@ public class ClassUtil {
      * 
      *  Integer[][].class.getName() = "[[Ljava.lang.Integer;" ClassUtil.getClassName(Integer[][].class) = "java.lang.Integer[][]"
      * </pre>
-     * 
      * </p>
      * <p>
      * 对于非数组的类型，该方法等效于 <code>Class.getName()</code> 方法。
@@ -109,7 +109,6 @@ public class ClassUtil {
      * 
      *  Integer[][].class.getName() = "[[Ljava.lang.Integer;" ClassUtil.getClassName(Integer[][].class) = "java.lang.Integer[][]"
      * </pre>
-     * 
      * </p>
      * <p>
      * 对于非数组的类型，该方法等效于 <code>Class.getName()</code> 方法。
@@ -228,7 +227,6 @@ public class ClassUtil {
      * <pre>
      *  ClassUtil.getShortClassNameForObject(Boolean.TRUE) = "Boolean" ClassUtil.getShortClassNameForObject(new Boolean[10]) = "Boolean[]" ClassUtil.getShortClassNameForObject(new int[1][2]) = "int[][]"
      * </pre>
-     * 
      * </p>
      * 
      * @param object 要查看的对象
@@ -253,7 +251,6 @@ public class ClassUtil {
      * <pre>
      *  ClassUtil.getShortClassName(Boolean.class) = "Boolean" ClassUtil.getShortClassName(Boolean[].class) = "Boolean[]" ClassUtil.getShortClassName(int[][].class) = "int[][]" ClassUtil.getShortClassName(Map.Entry.class) = "Map.Entry"
      * </pre>
-     * 
      * </p>
      * 
      * @param clazz 要查看的类
@@ -278,7 +275,6 @@ public class ClassUtil {
      * <pre>
      *  ClassUtil.getShortClassName(Boolean.class.getName()) = "Boolean" ClassUtil.getShortClassName(Boolean[].class.getName()) = "Boolean[]" ClassUtil.getShortClassName(int[][].class.getName()) = "int[][]" ClassUtil.getShortClassName(Map.Entry.class.getName()) = "Map.Entry"
      * </pre>
-     * 
      * </p>
      * 
      * @param className 要查看的类名
@@ -374,7 +370,6 @@ public class ClassUtil {
      * <pre>
      * ClassUtil.getClassNameForObjectAsResource(&quot;This is a string&quot;) = &quot;java/lang/String.class&quot;
      * </pre>
-     * 
      * </p>
      * 
      * @param object 要显示类名的对象
@@ -396,7 +391,6 @@ public class ClassUtil {
      * <pre>
      * ClassUtil.getClassNameAsResource(String.class) = &quot;java/lang/String.class&quot;
      * </pre>
-     * 
      * </p>
      * 
      * @param clazz 要显示类名的类
@@ -418,7 +412,6 @@ public class ClassUtil {
      * <pre>
      * ClassUtil.getClassNameAsResource(&quot;java.lang.String&quot;) = &quot;java/lang/String.class&quot;
      * </pre>
-     * 
      * </p>
      * 
      * @param className 要显示的类名
@@ -538,12 +531,9 @@ public class ClassUtil {
      * <p>
      * 例如 <code>ClassUtil.getSuperclasses(java.util.ArrayList.class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.util.AbstractList</code></li>
-     * <li>
-	 * <code>java.util.AbstractCollection</code></li>
-     * <li>
-	 * <code>java.lang.Object</code></li>
+     * <li><code>java.util.AbstractList</code></li>
+     * <li><code>java.util.AbstractCollection</code></li>
+     * <li><code>java.lang.Object</code></li>
      * </ol>
      * </p>
      * <p>
@@ -556,27 +546,18 @@ public class ClassUtil {
      * 对于一个数组，此方法返回一个列表，列出所有component类型的父类的相同维数的数组类型。 例如：
      * <code>ClassUtil.getSuperclasses(java.util.ArrayList[][].class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.util.AbstractList[][]</code></li>
-     * <li>
-	 * <code>java.util.AbstractCollection[][]</code></li>
-     * <li>
-	 * <code>java.lang.Object[][]</code></li>
-     * <li>
-	 * <code>java.lang.Object[]</code></li>
-     * <li>
-	 * <code>java.lang.Object</code></li>
+     * <li><code>java.util.AbstractList[][]</code></li>
+     * <li><code>java.util.AbstractCollection[][]</code></li>
+     * <li><code>java.lang.Object[][]</code></li>
+     * <li><code>java.lang.Object[]</code></li>
+     * <li><code>java.lang.Object</code></li>
      * </ol>
      * 注意，原子类型及其数组，将被转换成相应的包装类来处理。 例如： <code>ClassUtil.getSuperclasses(int[][].class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.lang.Number[][]</code></li>
-     * <li>
-	 * <code>java.lang.Object[][]</code></li>
-     * <li>
-	 * <code>java.lang.Object[]</code></li>
-     * <li>
-	 * <code>java.lang.Object</code></li>
+     * <li><code>java.lang.Number[][]</code></li>
+     * <li><code>java.lang.Object[][]</code></li>
+     * <li><code>java.lang.Object[]</code></li>
+     * <li><code>java.lang.Object</code></li>
      * </ol>
      * </p>
      * 
@@ -600,41 +581,29 @@ public class ClassUtil {
      * <p>
      * 例如 <code>ClassUtil.getInterfaces(java.util.ArrayList.class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.util.List</code></li>
-     * <li>
-	 * <code>java.util.Collection</code></li>
-     * <li>
-	 * <code>java.util.RandomAccess</code></li>
-     * <li>
-	 * <code>java.lang.Cloneable</code></li>
-     * <li>
-	 * <code>java.io.Serializable</code></li>
+     * <li><code>java.util.List</code></li>
+     * <li><code>java.util.Collection</code></li>
+     * <li><code>java.util.RandomAccess</code></li>
+     * <li><code>java.lang.Cloneable</code></li>
+     * <li><code>java.io.Serializable</code></li>
      * </ol>
      * </p>
      * <p>
      * 对于一个数组，此方法返回一个列表，列出所有component类型的接口的相同维数的数组类型。 例如：
      * <code>ClassUtil.getInterfaces(java.util.ArrayList[][].class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.util.List[][]</code></li>
-     * <li>
-	 * <code>java.util.Collection[][]</code></li>
-     * <li>
-	 * <code>java.util.RandomAccess[][]</code></li>
-     * <li>
-	 * <code>java.lang.Cloneable[][]</code></li>
-     * <li>
-	 * <code>java.io.Serializable[][]</code></li>
+     * <li><code>java.util.List[][]</code></li>
+     * <li><code>java.util.Collection[][]</code></li>
+     * <li><code>java.util.RandomAccess[][]</code></li>
+     * <li><code>java.lang.Cloneable[][]</code></li>
+     * <li><code>java.io.Serializable[][]</code></li>
      * </ol>
      * </p>
      * <p>
      * 注意，原子类型及其数组，将被转换成相应的包装类来处理。 例如： <code>ClassUtil.getInterfaces(int[][].class)</code> 返回以下列表：
      * <ol>
-     * <li>
-	 * <code>java.lang.Comparable[][]</code></li>
-     * <li>
-	 * <code>java.io.Serializable[][]</code></li>
+     * <li><code>java.lang.Comparable[][]</code></li>
+     * <li><code>java.io.Serializable[][]</code></li>
      * </ol>
      * </p>
      * 
@@ -789,10 +758,10 @@ public class ClassUtil {
 
             // long可以接受：long、int、byte、short、char
             if (Long.TYPE.equals(clazz)) {
-                return Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass) || Short.class.equals(fromClass)
-                       || Character.TYPE.equals(fromClass) || Character.class.equals((fromClass));
+                return Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass) || Integer.class.equals(fromClass)
+                       || Byte.TYPE.equals(fromClass) || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                       || Character.class.equals((fromClass));
             }
 
             // float可以接受：float, long, int, byte, short, char
@@ -808,8 +777,8 @@ public class ClassUtil {
             if (Double.TYPE.equals(clazz)) {
                 return Double.class.equals(fromClass) || Float.TYPE.equals(fromClass) || Float.class.equals(fromClass)
                        || Long.TYPE.equals(fromClass) || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass) || Short.class.equals(fromClass)
+                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass) || Byte.class.equals(fromClass)
+                       || Short.TYPE.equals(fromClass) || Short.class.equals(fromClass)
                        || Character.TYPE.equals(fromClass) || Character.class.equals((fromClass));
             }
         }
@@ -1146,64 +1115,64 @@ public class ClassUtil {
         public List getInterfaces() {
             return Collections.unmodifiableList(interfaces);
         }
-        
+
         @SuppressWarnings("unchecked")
         public static <T extends Object> Class<T> converAtomicType(Class<T> clazz) {
-            
-            if(clazz == null) {
+
+            if (clazz == null) {
                 return null;
             }
-            
+
             Class<T> tmpClazz = clazz;
-            
-            if(clazz.getName() == boolean.class.getName()) {
+
+            if (clazz.getName() == boolean.class.getName()) {
                 tmpClazz = (Class<T>) Boolean.class;
-            } else if(clazz.getName() == char.class.getName()){
+            } else if (clazz.getName() == char.class.getName()) {
                 tmpClazz = (Class<T>) Character.class;
-            } else if(clazz.getName() == byte.class.getName()){
+            } else if (clazz.getName() == byte.class.getName()) {
                 tmpClazz = (Class<T>) Byte.class;
-            } else if(clazz.getName() == short.class.getName()) {
+            } else if (clazz.getName() == short.class.getName()) {
                 tmpClazz = (Class<T>) Short.class;
-            } else if(clazz.getName() == int.class.getName()) {
+            } else if (clazz.getName() == int.class.getName()) {
                 tmpClazz = (Class<T>) Integer.class;
-            } else if(clazz.getName() == long.class.getName()) {
+            } else if (clazz.getName() == long.class.getName()) {
                 tmpClazz = (Class<T>) Long.class;
-            } else if(clazz.getName() == double.class.getName()) {
+            } else if (clazz.getName() == double.class.getName()) {
                 tmpClazz = (Class<T>) Double.class;
-            } else if(clazz.getName() == float.class.getName()) {
+            } else if (clazz.getName() == float.class.getName()) {
                 tmpClazz = (Class<T>) Float.class;
             }
-            
+
             return tmpClazz;
         }
     }
-    
+
     @SuppressWarnings("unchecked")
     public static <T extends Object> T converObj(Object obj, Class<T> clazz) {
-        if(clazz == null) {
+        if (clazz == null) {
             return null;
         }
-        
+
         Class<T> tmpClazz = clazz;
-        
-        if(clazz.getName() == boolean.class.getName()) {
+
+        if (clazz.getName() == boolean.class.getName()) {
             tmpClazz = (Class<T>) Boolean.class;
-        } else if(clazz.getName() == char.class.getName()){
+        } else if (clazz.getName() == char.class.getName()) {
             tmpClazz = (Class<T>) Character.class;
-        } else if(clazz.getName() == byte.class.getName()){
+        } else if (clazz.getName() == byte.class.getName()) {
             tmpClazz = (Class<T>) Byte.class;
-        } else if(clazz.getName() == short.class.getName()) {
+        } else if (clazz.getName() == short.class.getName()) {
             tmpClazz = (Class<T>) Short.class;
-        } else if(clazz.getName() == int.class.getName()) {
+        } else if (clazz.getName() == int.class.getName()) {
             tmpClazz = (Class<T>) Integer.class;
-        } else if(clazz.getName() == long.class.getName()) {
+        } else if (clazz.getName() == long.class.getName()) {
             tmpClazz = (Class<T>) Long.class;
-        } else if(clazz.getName() == double.class.getName()) {
+        } else if (clazz.getName() == double.class.getName()) {
             tmpClazz = (Class<T>) Double.class;
-        } else if(clazz.getName() == float.class.getName()) {
+        } else if (clazz.getName() == float.class.getName()) {
             tmpClazz = (Class<T>) Float.class;
         }
-        
+
         return (T) tmpClazz.cast(obj);
     }
 }

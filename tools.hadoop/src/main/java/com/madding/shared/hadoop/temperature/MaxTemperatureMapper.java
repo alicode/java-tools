@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.hadoop.temperature;
 
 import java.io.IOException;
@@ -18,8 +23,8 @@ import org.apache.hadoop.mapred.Reporter;
 public class MaxTemperatureMapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, DoubleWritable> {
 
     @Override
-    public void map(LongWritable key, Text value, OutputCollector<Text, DoubleWritable> output, Reporter reporter)
-                                                                                                                  throws IOException {
+    public void map(LongWritable key, Text value, OutputCollector<Text, DoubleWritable> output,
+                    Reporter reporter) throws IOException {
         String line = value.toString();
         if (line.length() < 100) {
             return;
@@ -38,10 +43,10 @@ public class MaxTemperatureMapper extends MapReduceBase implements Mapper<LongWr
         }
 
         double airTemperature;
-        
+
         try {
             airTemperature = Double.parseDouble(airTemperatureStr);
-        } catch(Exception e) {
+        } catch (Exception e) {
             return;
         }
 

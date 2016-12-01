@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.completionservice;
 
 import java.lang.reflect.Method;
@@ -20,13 +25,13 @@ import org.slf4j.LoggerFactory;
  */
 public class MadCompletionService {
 
-    private static final Logger         logger            = LoggerFactory.getLogger(MadCompletionService.class);
+    private static final Logger       logger            = LoggerFactory.getLogger(MadCompletionService.class);
 
-    private ExecutorService             fixedPool         = Executors.newFixedThreadPool(20);
-    private CompletionService<Object>   completionService = new ExecutorCompletionService<Object>(fixedPool);
+    private ExecutorService           fixedPool         = Executors.newFixedThreadPool(20);
+    private CompletionService<Object> completionService = new ExecutorCompletionService<Object>(fixedPool);
 
-    private Vector<CallServiceModel>    models;
-    
+    private Vector<CallServiceModel>  models;
+
     private static class CallService implements Callable<Object> {
 
         private CallServiceModel model;
@@ -65,7 +70,7 @@ public class MadCompletionService {
         for (int i = 0; i < correntSerivceLength; i++) {
             try {
                 Future<Object> future = completionService.take();
-                if(logger.isDebugEnabled()) {
+                if (logger.isDebugEnabled()) {
                     logger.debug("true:" + future.get() + ":future.get()");
                 }
             } catch (InterruptedException e) {

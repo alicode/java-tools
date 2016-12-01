@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.task;
 
 import java.io.File;
@@ -14,14 +19,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public abstract class Task {
 
-    protected static final Logger  logger       = LoggerFactory.getLogger(AbstractTask.class);
+    protected static final Logger logger       = LoggerFactory.getLogger(AbstractTask.class);
 
-    protected int                  threadNumber = 10;
-    protected static final String  DAEMON_FILE  = "classpath:spring-daemon-root.xml";
-    protected File                 file         = new File("/home/admin/inputfile.txt");
-    protected File                 fileLock     = new File("/home/admin/inputfile.txt.lock");
+    protected int                 threadNumber = 10;
+    protected static final String DAEMON_FILE  = "classpath:spring-daemon-root.xml";
+    protected File                file         = new File("/home/admin/inputfile.txt");
+    protected File                fileLock     = new File("/home/admin/inputfile.txt.lock");
 
-    protected ApplicationContext   context      = null;
+    protected ApplicationContext  context      = null;
 
     public Task(File basedir, String logfileName){
         System.setProperty("application.codeset", "UTF-8");
@@ -60,12 +65,12 @@ public abstract class Task {
             this.fileLock = new File(fileName + ".lock");
         }
     }
-    
+
     public void waitForProduce(int millis) {
-        if(millis < 1) {
+        if (millis < 1) {
             millis = 1000;
         }
-        
+
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -76,7 +81,7 @@ public abstract class Task {
     abstract public void produce();
 
     abstract public void cusume();
-    
+
     public void execute(int waitMillis) {
         produce();
         waitForProduce(waitMillis);

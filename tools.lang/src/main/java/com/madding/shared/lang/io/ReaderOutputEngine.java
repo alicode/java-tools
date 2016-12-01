@@ -1,5 +1,7 @@
 /*
- * Copyright madding.me.
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
 package com.madding.shared.lang.io;
 
@@ -11,7 +13,7 @@ import java.io.Writer;
 
 /**
  * 类ReaderOutputEngine.java的实现描述：将数据从任意<code>Reader</code>复制到<code>OutputStreamWriter</code>的输出引擎. 本代码移植自IBM developer
- * works精彩文章, 参见package文档.
+ * works精彩文章, 参见文档.
  * 
  * @author madding.lip May 7, 2012 5:03:09 PM
  */

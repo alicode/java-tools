@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.test.io;
 
 import static java.lang.String.format;
@@ -15,7 +20,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
 
-public class ByteBufferPerfTest {
+public class ByteBufferTest {
 
     private static final String FILE_PATH = "/Users/madding/logs/bytebuffer/tmpfile";
     private static WritableByteChannel target;
@@ -30,7 +35,7 @@ public class ByteBufferPerfTest {
          out.println("stop");
     }
 
-    private static void createfile() throws IOException {
+    protected static void createfile() throws IOException {
         File file = new File(FILE_PATH);
         if (!file.exists()) {
             file.createNewFile();

@@ -1,5 +1,7 @@
 /*
- * Copyright madding.me.
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
  */
 package com.madding.shared.lang;
 
@@ -682,7 +684,8 @@ public class ArrayUtil {
      * @return 数组本身或指定类型的空数组
      */
     public static Object[] defaultIfNull(Object[] array, Class<?> defaultComponentType) {
-        return (array == null) ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType), 0) : array;
+        return (array == null) ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType),
+                                                              0) : array;
     }
 
     /**
@@ -695,7 +698,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new String[0])  = 数组本身
      * ArrayUtil.defaultIfEmpty(new String[10]) = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -715,7 +717,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new long[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new long[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -735,7 +736,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new int[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new int[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -755,7 +755,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new short[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new short[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -775,7 +774,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new byte[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new byte[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -795,7 +793,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new double[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new double[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -815,7 +812,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new float[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new float[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -835,7 +831,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new boolean[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new boolean[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -855,7 +850,6 @@ public class ArrayUtil {
      * ArrayUtil.defaultIfEmpty(new char[0])    = 数组本身
      * ArrayUtil.defaultIfEmpty(new char[10])   = 数组本身
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -1032,7 +1026,8 @@ public class ArrayUtil {
      * @return 数组本身或指定类型的空数组
      */
     public static Object[] defaultIfEmpty(Object[] array, Class<?> defaultComponentType) {
-        return ((array == null) || (array.length == 0)) ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType),
+        return ((array == null) || (array.length == 0)) ? (Object[]) Array.newInstance(
+                                                                                       ClassUtil.getNonPrimitiveType(defaultComponentType),
                                                                                        0) : array;
     }
 
@@ -1299,11 +1294,8 @@ public class ArrayUtil {
      * 
      * <pre>
      * 
-     * 
-     * 
      * List myList = ArrayUtil.toFixedList(new String[] { &quot;aaa&quot;, &quot;bbb&quot;, &quot;ccc&quot; });
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -1330,12 +1322,9 @@ public class ArrayUtil {
      * 
      * <pre>
      * 
-     * 
-     * 
      * List myList = ArrayUtil.toList(new String[] { &quot;aaa&quot;, &quot;bbb&quot;, &quot;ccc&quot; });
-     *                                                                       List singleList = ArrayUtil.toList(&quot;hello&quot;); // 返回单个元素的列表[&quot;hello&quot;]
+     * List singleList = ArrayUtil.toList(&quot;hello&quot;); // 返回单个元素的列表[&quot;hello&quot;]
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -1358,13 +1347,9 @@ public class ArrayUtil {
      * 
      * <pre>
      * 
-     * 
-     * 
      * List myList = ArrayUtil.toList(new String[] { &quot;aaa&quot;, &quot;bbb&quot;, &quot;ccc&quot; }, new ArrayList());
-     *                                                                                        List singleList = ArrayUtil.toList(&quot;hello&quot;,
-     *                                                                                                                           new ArrayList()); // 返回单个元素的列表[&quot;hello&quot;]
+     * List singleList = ArrayUtil.toList(&quot;hello&quot;, new ArrayList()); // 返回单个元素的列表[&quot;hello&quot;]
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -1489,11 +1474,9 @@ public class ArrayUtil {
      * 
      * <pre>
      * 
-     * 
-     * 
-     * Map colorMap = ArrayUtil.toMap(new String[][] { { &quot;RED&quot;, &quot;#FF0000&quot; }, { &quot;GREEN&quot;, &quot;#00FF00&quot; }, { &quot;BLUE&quot;, &quot;#0000FF&quot; } });
+     * Map colorMap = ArrayUtil.toMap(new String[][] { { &quot;RED&quot;, &quot;#FF0000&quot; }, { &quot;GREEN&quot;, &quot;#00FF00&quot; },
+     *                                                 { &quot;BLUE&quot;, &quot;#0000FF&quot; } });
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -1519,7 +1502,6 @@ public class ArrayUtil {
      *     {"GREEN", "#00FF00"},
      *     {"BLUE", "#0000FF"}}, new HashMap());
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -4931,7 +4913,6 @@ public class ArrayUtil {
      *                       {2, 3, 4}   // 嵌套数组
      *                    })                                 = "[[1, 2, 3], hello, <null>, [], [2, 3, 4]]"
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -4958,7 +4939,6 @@ public class ArrayUtil {
      *                       {2, 3, 4}   // 嵌套数组
      *                    }, "null")                                 = "[[1, 2, 3], hello, <null>, [], [2, 3, 4]]"
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组
@@ -4986,7 +4966,6 @@ public class ArrayUtil {
      *                       {2, 3, 4}   // 嵌套数组
      *                    }, "null", "NULL")                                 = "[[1, 2, 3], hello, NULL, [], [2, 3, 4]]"
      * </pre>
-     * 
      * </p>
      * 
      * @param array 要转换的数组

@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.components.completionservice;
 
 import java.util.Map;
@@ -24,18 +29,18 @@ public class CallReturnModelPool {
     public static void remove(CallServiceModel model) {
         resultPool.remove(model);
     }
-    
+
     public static void clean() {
         resultPool.clear();
     }
-    
+
     public static void clean(Vector<CallServiceModel> models) {
-        if(models == null) {
+        if (models == null) {
             return;
         }
-        for(CallServiceModel model : models) {
+        for (CallServiceModel model : models) {
             remove(model);
         }
     }
-    
+
 }

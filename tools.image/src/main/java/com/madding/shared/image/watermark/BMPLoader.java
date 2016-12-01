@@ -1,3 +1,8 @@
+/*
+ * Copyright (C) 2013-2016 aqnote.com<madding.lip@gmail.com>. 
+ * This library is free software; you can redistribute it and/or modify it under the terms of
+ * the GNU Lesser General Public License as published by the Free Software Foundation;
+ */
 package com.madding.shared.image.watermark;
 
 import java.awt.Image;
@@ -5,7 +10,6 @@ import java.awt.Toolkit;
 import java.awt.image.MemoryImageSource;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 
 public class BMPLoader {
 
@@ -155,15 +159,15 @@ public class BMPLoader {
 
             if (bh.nbitcount == 24)
 
-            return (readMap24(fs, bh));
+                return (readMap24(fs, bh));
 
             if (bh.nbitcount == 32)
 
-            return (readMap32(fs, bh));
+                return (readMap32(fs, bh));
 
             if (bh.nbitcount == 8)
 
-            return (readMap8(fs, bh));
+                return (readMap8(fs, bh));
 
             fs.close();
 
@@ -206,7 +210,7 @@ public class BMPLoader {
 
         (new MemoryImageSource(bh.nwidth, bh.nheight,
 
-        ndata, 0, bh.nwidth));
+                               ndata, 0, bh.nwidth));
 
         fs.close();
 
@@ -244,7 +248,7 @@ public class BMPLoader {
 
         (new MemoryImageSource(bh.nwidth, bh.nheight,
 
-        ndata, 0, bh.nwidth));
+                               ndata, 0, bh.nwidth));
 
         fs.close();
 
@@ -317,8 +321,7 @@ public class BMPLoader {
 
         for (int j8 = 0; j8 < bh.nheight; j8++) {
             for (int i8 = 0; i8 < bh.nwidth; i8++) {
-                ndata8[bh.nwidth * (bh.nheight - j8 - 1) + i8] =
-                npalette[((int) bdata[nindex8] & 0xff)];
+                ndata8[bh.nwidth * (bh.nheight - j8 - 1) + i8] = npalette[((int) bdata[nindex8] & 0xff)];
                 nindex8++;
             }
             nindex8 += npad8;
@@ -328,7 +331,7 @@ public class BMPLoader {
 
         (new MemoryImageSource(bh.nwidth, bh.nheight,
 
-        ndata8, 0, bh.nwidth));
+                               ndata8, 0, bh.nwidth));
 
         return (image);
 
