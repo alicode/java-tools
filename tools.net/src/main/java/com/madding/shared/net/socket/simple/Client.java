@@ -1,4 +1,4 @@
-package com.madding.shared.net.socket;
+package com.madding.shared.net.socket.simple;
 
 import java.io.*;
 import java.net.*;

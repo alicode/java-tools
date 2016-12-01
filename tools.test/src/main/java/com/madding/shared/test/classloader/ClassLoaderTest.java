@@ -26,11 +26,11 @@ public class ClassLoaderTest {
 		System.out.println("===========================================");
 
 		// 输出bootstrapclassloader默认加载的路径
-		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
-		for (int i = 0; i < urls.length; i++) {
-			System.out.println(urls[i].toExternalForm());
-		}
-		System.out.println("===========================================");
+//		URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
+//		for (int i = 0; i < urls.length; i++) {
+//			System.out.println(urls[i].toExternalForm());
+//		}
+//		System.out.println("===========================================");
 
 		// 获得加载ClassLoaderTest.class这个类的类加载器
 		ClassLoader loader = ClassLoaderTest.class.getClassLoader();

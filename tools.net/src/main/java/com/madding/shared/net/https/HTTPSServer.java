@@ -13,7 +13,7 @@ public class HTTPSServer {
 
     public static void main(String[] args) throws Exception {
 
-        Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+//        Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
         System.setProperty("javax.net.ssl.keyStore", "/home/madding/certs/test.keystore");
         System.setProperty("javax.net.ssl.keyStorePassword", "123456");
 
