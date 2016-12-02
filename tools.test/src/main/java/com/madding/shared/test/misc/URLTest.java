@@ -25,6 +25,8 @@ public class URLTest {
      * URLStreamHandler会获取网络中hostAddress做比对；一般服务器都有做dns的负载均衡；   
      *  - InetAddress addr = getHostAddress(u);
      * 所以超过1d基本上拿到的结果都不一样
+     * 
+     * 如果要比较url，可考虑用URI或者String
      */
     public void test() {
         try {
