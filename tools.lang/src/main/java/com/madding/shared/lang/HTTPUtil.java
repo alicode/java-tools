@@ -52,10 +52,10 @@ public class HTTPUtil {
         try {
             URL u = new URL(url);
             HttpURLConnection connection = (HttpURLConnection) u.openConnection();
-            if ((connection instanceof sun.net.www.protocol.https.HttpsURLConnectionImpl)) {
-                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setSSLSocketFactory(createSSLSocketFactory());
-                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setHostnameVerifier(new TrustAnyHostnameVerifier());
-            }
+//            if ((connection instanceof sun.net.www.protocol.https.HttpsURLConnectionImpl)) {
+//                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setSSLSocketFactory(createSSLSocketFactory());
+//                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setHostnameVerifier(new TrustAnyHostnameVerifier());
+//            }
             connection.setRequestProperty("Connection", "close");
             connection.setUseCaches(false);
             connection.setDoOutput(true);
@@ -109,10 +109,10 @@ public class HTTPUtil {
                 connection.getOutputStream().flush();
                 connection.getOutputStream().close();
             }
-            if ((connection instanceof sun.net.www.protocol.https.HttpsURLConnectionImpl)) {
-                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setSSLSocketFactory(createSSLSocketFactory());
-                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setHostnameVerifier(new TrustAnyHostnameVerifier());
-            }
+//            if ((connection instanceof sun.net.www.protocol.https.HttpsURLConnectionImpl)) {
+//                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setSSLSocketFactory(createSSLSocketFactory());
+//                ((sun.net.www.protocol.https.HttpsURLConnectionImpl) connection).setHostnameVerifier(new TrustAnyHostnameVerifier());
+//            }
             int retCode = connection.getResponseCode();
             // receive ,用recIn判断是否需要返回流形式
             InputStream inputStream = null;

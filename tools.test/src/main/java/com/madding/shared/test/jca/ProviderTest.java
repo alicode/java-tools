@@ -11,13 +11,14 @@ import java.security.Security;
 import java.util.Set;
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.bouncycastle.pqc.jcajce.provider.BouncyCastlePQCProvider;
 
 public class ProviderTest {
 
     static Provider[] providers = null;
     static {
-        providers = new Provider[] { new BouncyCastleProvider() };
-        // providers = Security.getProviders();
+        providers = new Provider[] { new BouncyCastleProvider(), new BouncyCastlePQCProvider() };
+        providers = Security.getProviders();
     }
 
     public static void main(String[] args) {

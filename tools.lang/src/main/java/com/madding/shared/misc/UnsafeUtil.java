@@ -5,10 +5,6 @@
  */
 package com.madding.shared.misc;
 
-import java.lang.reflect.Field;
-
-import sun.misc.Unsafe;
-
 /**
  * UnsafeUtil.java desc：TODO
  * 
@@ -18,16 +14,16 @@ public class UnsafeUtil {
 
     private static final String THE_UNSAFE = "theUnsafe";
 
-    public static Unsafe getUnsafeInstance() {
-        try {
-            Field UnsafeFiled = Unsafe.class.getDeclaredField(THE_UNSAFE);
-            UnsafeFiled.setAccessible(true);
-            return (Unsafe) UnsafeFiled.get(Unsafe.class);
-        } catch (SecurityException | NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+//    public static Unsafe getUnsafeInstance() {
+//        try {
+//            Field UnsafeFiled = Unsafe.class.getDeclaredField(THE_UNSAFE);
+//            UnsafeFiled.setAccessible(true);
+//            return (Unsafe) UnsafeFiled.get(Unsafe.class);
+//        } catch (SecurityException | NoSuchFieldException e) {
+//            e.printStackTrace();
+//        } catch (IllegalArgumentException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }
