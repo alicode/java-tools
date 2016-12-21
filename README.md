@@ -15,6 +15,9 @@
  > tools.doc/src/main/resources/templates
 
 #### update ####
+
+--------------------------------------------------------------
+** 由于aqnote账号丢失totp，因此账号无法登陆，以后改用aqnotecom账号，最新代码参考：https://github.com/aqnotecom/aqnote.cryptography **
 --------------------------------------------------------------
 **version 0.2.0**
  
